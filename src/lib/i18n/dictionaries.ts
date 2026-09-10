@@ -889,7 +889,7 @@ export const dictionaries: { en: DictionaryShape } = {
       howStep3:
         "Credentials → Create credentials → OAuth 2.0 Client ID → \"Web application\". Under \"Authorised redirect URIs\" add:",
       howStep4:
-        "Google Auth Platform → Audience → click \"Publish app\" so the status reads \"In production\". Leave the Test users list alone — it only applies to apps in Testing, and Testing is what makes Google drop your connection every 7 days.",
+        "Google Auth Platform → Branding: set the home page to https://github.com/YT-Wizards/YouTube-Channel-AI-VIP and the privacy policy to https://github.com/YT-Wizards/YouTube-Channel-AI-VIP/blob/main/PRIVACY.md, add github.com under Authorized domains, Save. Google refuses to publish without these two links. Then Audience → click \"Publish app\" so the status reads \"In production\". Leave the Test users list alone — it only applies to apps in Testing, and Testing is what makes Google drop your connection every 7 days.",
       howStep5:
         "Google Auth Platform → Data Access → Add scopes. Paste: youtube.readonly, yt-analytics.readonly, yt-analytics-monetary.readonly. Save.",
       openConsole: "Open Google Cloud Console",

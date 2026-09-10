@@ -200,6 +200,11 @@ This is what lets the app pull real Analytics data (views over time, retention, 
 2. **APIs & Services → OAuth consent screen**:
    - **User Type**: External → **Create**.
    - **App name**: `YouTube Channel AI VIP`. **User support email**: your email. **Developer contact email**: your email. **Save and continue**.
+   - **Branding** (Google Auth Platform → Branding). Google will not let you publish until these are filled in — the **Publish app** button shows a grey tooltip about "homepage url and privacy policy url" otherwise. Fill in:
+     - **Application home page**: `https://github.com/YT-Wizards/YouTube-Channel-AI-VIP`
+     - **Application privacy policy link**: `https://github.com/YT-Wizards/YouTube-Channel-AI-VIP/blob/main/PRIVACY.md`
+     - **Authorized domains** → **Add domain** → `github.com`
+     - **Save**. (No logo needed, and nothing here needs Google to verify anything.)
    - **Scopes** → **Add or remove scopes** → add all three:
      - `https://www.googleapis.com/auth/yt-analytics.readonly`
      - `https://www.googleapis.com/auth/yt-analytics-monetary.readonly`
@@ -346,6 +351,10 @@ If you use Google login (Part 4) and changed the port, add the new address to Go
 ### "Could not download the transcript engine" (when transcribing)
 
 Transcripts need a small helper program (yt-dlp) that the app downloads by itself the first time you ask for a transcript — about 20–40 MB from github.com. If that download fails, everything else in the app keeps working; only transcripts are unavailable. Usually it just means the internet was flaky at that moment — try the transcript again. If your network blocks github.com entirely, the error message tells you where to put a manually downloaded copy.
+
+### "Publish app" is greyed out — "homepage url and privacy policy url are required"
+
+Google now insists on two links before it lets an app leave Testing. Go to **Google Auth Platform → Branding**, paste `https://github.com/YT-Wizards/YouTube-Channel-AI-VIP` as the home page and `https://github.com/YT-Wizards/YouTube-Channel-AI-VIP/blob/main/PRIVACY.md` as the privacy policy, add `github.com` under **Authorized domains**, click **Save**, then go back to **Audience → Publish app**. This is a form to fill, not a review — Google does not check anything.
 
 ### "Access blocked: app has not completed verification" (Google OAuth)
 

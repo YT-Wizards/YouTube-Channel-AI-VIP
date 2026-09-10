@@ -2,6 +2,8 @@
 
 A local AI-powered YouTube channel analytics platform with an **AI thumbnail generator**: YouTube Studio-style dashboard (views, watch time, subscribers, audience, traffic, revenue), retention curves, video hook analyzer, AI chat with Claude over all your imported data, automatic transcript extraction, comment & competitor analysis — and a Thumbnails tab that generates covers in the style that measurably works on your channel.
 
+Everything runs on your own computer; see the [privacy policy](PRIVACY.md) for exactly what Google data it reads and where it is kept.
+
 > **This project runs locally on your computer.** All data lives in `~/.youtube-channel-ai-vip/app.db` — in your home folder, deliberately *outside* this project folder so that updating the app can never delete it. API keys are entered once on the **Integrations** page and stored in that local SQLite database — nothing is uploaded anywhere.
 
 ## Thumbnail generator
