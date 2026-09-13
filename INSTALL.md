@@ -352,6 +352,14 @@ If you use Google login (Part 4) and changed the port, add the new address to Go
 
 Transcripts need a small helper program (yt-dlp) that the app downloads by itself the first time you ask for a transcript — about 20–40 MB from github.com. If that download fails, everything else in the app keeps working; only transcripts are unavailable. Usually it just means the internet was flaky at that moment — try the transcript again. If your network blocks github.com entirely, the error message tells you where to put a manually downloaded copy.
 
+### "Branding verification issues" — a dialog listing problems with your home page and app name
+
+Google may pop up a panel saying your home page URL "is not registered to you" and that the app name "does not uniquely identify your brand", offering **I have fixed the issues** / **I believe the issues found are incorrect**.
+
+**Click Cancel and ignore it.** That panel is Google's *brand* review, and it decides one thing only: whether your app's name and logo are displayed on the consent screen instead of a generic label. It does not block sign-in, it does not block publishing, and you cannot pass it with our GitHub link because that site belongs to us, not to you. Requesting re-verification just fails again.
+
+What matters is **Audience → Publish app** → status **In production**. That is the step that stops the 7-day disconnects, and it works with the branding left unverified.
+
 ### "Publish app" is greyed out — "homepage url and privacy policy url are required"
 
 Google now insists on two links before it lets an app leave Testing. Go to **Google Auth Platform → Branding**, paste `https://github.com/YT-Wizards/YouTube-Channel-AI-VIP` as the home page and `https://github.com/YT-Wizards/YouTube-Channel-AI-VIP/blob/main/PRIVACY.md` as the privacy policy, add `github.com` under **Authorized domains**, click **Save**, then go back to **Audience → Publish app**. This is a form to fill, not a review — Google does not check anything.
