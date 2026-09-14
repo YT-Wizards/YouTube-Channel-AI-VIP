@@ -919,7 +919,7 @@ export const dictionaries: { en: DictionaryShape } = {
       tipManagerLimitations:
         "Manager-level access gives you views, watch time, demographics, traffic sources, retention. It does NOT give revenue/RPM/earnings — those require Owner. If you need revenue data, the owner must either make you an Owner or log in themselves.",
       tipUnverifiedScreen:
-        "When you connect, Google shows an \"app isn't verified\" screen. That is expected — this app reads private YouTube data, and Google only removes that screen for apps that pass a public review. Click \"Advanced\" → \"Go to (your app name)\". You do not need to pass verification: Google exempts apps used only by you, or by a few people you know personally.",
+        "When you connect, Google shows an \"app isn't verified\" screen. That is expected — this app reads private YouTube data, and Google only removes that screen for apps that pass a public review. The only button there refuses access, so it looks like a dead end — it is not. The way on is the small link at the BOTTOM LEFT of that screen: \"Advanced\" → \"Go to (your app name)\", which Google marks unsafe. That page appears in your Google account's language, so the link may read \"Дополнительные настройки\" or \"Configuración avanzada\" — go by its position, not the word. You do not need to pass verification: Google exempts apps used only by you, or by a few people you know personally.",
       tipWhereScopes:
         "In Google's new Cloud Console UI, scopes live under \"Data Access\", not \"OAuth consent screen → Scopes\" like older guides say. \"Publish app\" and the Test users list are both under \"Audience\".",
       tipRefreshTokenExpiry:

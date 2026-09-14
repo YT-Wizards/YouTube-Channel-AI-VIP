@@ -228,7 +228,9 @@ This is what lets the app pull real Analytics data (views over time, retention, 
 4. In the app: **Integrations** → scroll to **YouTube Analytics (Google OAuth)** → paste **Client ID** and **Client secret** → **Save**.
 5. Then for each channel you've added, click the **Google** button next to it → sign in with the channel's owner account → grant all 3 permissions → page redirects back to the app.
 
-   > Google will show an **"app isn't verified"** screen on the way. That is expected and safe — this is your own app reading your own data, and Google only removes that screen for apps that pass a public review. Click **Advanced → Go to (your app name)**. You do not need verification: Google exempts apps used only by you, or by a few people you know personally.
+   > Google will show an **"app isn't verified"** screen on the way. That is expected and safe — this is your own app reading your own data, and Google only removes that screen for apps that pass a public review. You do not need verification: Google exempts apps used only by you, or by a few people you know personally.
+   >
+   > **The only button on that screen refuses access, so the screen looks like a dead end. It is not.** The way forward is the small link at the **bottom left**, under the text and level with the blue button: **Advanced** → then **Go to (your app name)**, which Google marks "unsafe". It is your own app; continue. The page is shown in your Google account's language, so the link may read *Дополнительные настройки*, *Configuración avanzada*, *Erweitert* — position is the reliable clue, not the word.
 
 > Token expiry: the 7-day re-login only happens while your OAuth app's publishing status is **Testing**. Publishing it (step 2, **Audience → Publish app**) removes that clock for good. One catch: the expiry is baked into a token the moment it is issued — so publish **first**, then click **Reconnect** once, otherwise the token you already hold still dies on schedule.
 
