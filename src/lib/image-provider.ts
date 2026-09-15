@@ -557,6 +557,8 @@ export function buildKieInput(
       ? { image_size: kieImageSize(aspect) }
       : { aspect_ratio: aspect }),
     ...(shape.outputFormat ? { output_format: "png" } : {}),
+    // FLUX-2 rejects the request outright without this second size field.
+    ...(shape.resolution ? { resolution: shape.resolution } : {}),
     ...(shape.refsField && refUrls.length
       ? {
           // Qwen's image_url is declared as a plain string, not an array.

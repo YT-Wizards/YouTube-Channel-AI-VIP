@@ -395,6 +395,15 @@ export type KieRequestShape = {
    * `landscape_16_9` / `portrait_16_9` — and have no aspect_ratio at all.
    */
   aspectField: "aspect_ratio" | "image_size";
+  /**
+   * FLUX-2 asks for the output size as a SECOND required field beside the
+   * aspect ratio, and rejects the whole request without it — a client got
+   * `no task id (code 500): resolution is required` on every Flux run.
+   * Only "1K" and "2K" exist. We send 2K: 1K is 1024x576 for a 16:9 frame,
+   * narrower than the 1280x720 cover we produce, so it would have to be
+   * upscaled. No other family documents this field.
+   */
+  resolution?: "1K" | "2K";
 };
 
 const RATIO = { refsAsArray: true, aspectField: "aspect_ratio" } as const;
@@ -413,10 +422,10 @@ export const KIE_REQUEST_SHAPES: Record<string, KieRequestShape> = {
   "seedream/5-lite-text-to-image": { ...RATIO, refsField: null, outputFormat: true },
   "seedream/4.5-text-to-image": { ...RATIO, refsField: null, outputFormat: false },
   // FLUX
-  "flux-2/pro-image-to-image": { ...RATIO, refsField: "input_urls", outputFormat: false },
-  "flux-2/pro-text-to-image": { ...RATIO, refsField: null, outputFormat: false },
-  "flux-2/flex-image-to-image": { ...RATIO, refsField: "input_urls", outputFormat: false },
-  "flux-2/flex-text-to-image": { ...RATIO, refsField: null, outputFormat: false },
+  "flux-2/pro-image-to-image": { ...RATIO, refsField: "input_urls", outputFormat: false, resolution: "2K" },
+  "flux-2/pro-text-to-image": { ...RATIO, refsField: null, outputFormat: false, resolution: "2K" },
+  "flux-2/flex-image-to-image": { ...RATIO, refsField: "input_urls", outputFormat: false, resolution: "2K" },
+  "flux-2/flex-text-to-image": { ...RATIO, refsField: null, outputFormat: false, resolution: "2K" },
   // GPT Image
   "gpt-image-2-image-to-image": { ...RATIO, refsField: "input_urls", outputFormat: false },
   "gpt-image-2-text-to-image": { ...RATIO, refsField: null, outputFormat: false },
